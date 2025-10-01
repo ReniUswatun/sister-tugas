@@ -1,0 +1,168 @@
+{
+    "metrics": {
+        "iteration_duration": {
+            "min": 1000.6674,
+            "med": 1006.961,
+            "max": 1080.933,
+            "p(90)": 1045.28224,
+            "p(95)": 1054.0261400000002,
+            "avg": 1015.6093578999997
+        },
+        "http_reqs": {
+            "count": 1000,
+            "rate": 9.83770938404804
+        },
+        "http_req_duration{expected_response:true}": {
+            "max": 80.2986,
+            "p(90)": 44.249810000000004,
+            "p(95)": 53.11842499999998,
+            "avg": 14.344301999999994,
+            "min": 0.342,
+            "med": 5.25695
+        },
+        "data_sent": {
+            "count": 84800,
+            "rate": 834.2377557672738
+        },
+        "http_req_connecting": {
+            "avg": 0.005480999999999999,
+            "min": 0,
+            "med": 0,
+            "max": 0.5481,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_tls_handshaking": {
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0,
+            "min": 0
+        },
+        "iterations": {
+            "count": 1000,
+            "rate": 9.83770938404804
+        },
+        "http_req_duration": {
+            "avg": 14.344301999999994,
+            "min": 0.342,
+            "med": 5.25695,
+            "max": 80.2986,
+            "p(90)": 44.249810000000004,
+            "p(95)": 53.11842499999998,
+            "thresholds": {
+                "p(95)<2000": false
+            }
+        },
+        "http_req_blocked": {
+            "avg": 0.3069119,
+            "min": 0,
+            "med": 0,
+            "max": 30.3468,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_receiving": {
+            "p(90)": 41.08602,
+            "p(95)": 48.56943499999996,
+            "avg": 12.246548100000012,
+            "min": 0,
+            "med": 3.03315,
+            "max": 76.0828
+        },
+        "checks": {
+            "passes": 2000,
+            "fails": 0,
+            "value": 1
+        },
+        "vus_max": {
+            "value": 10,
+            "min": 10,
+            "max": 10
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 1000,
+            "thresholds": {
+                "rate<0.01": false
+            },
+            "value": 0
+        },
+        "data_received": {
+            "count": 3380224400,
+            "rate": 33253665.300068155
+        },
+        "http_req_sending": {
+            "p(90)": 0,
+            "p(95)": 0.33025999999999955,
+            "avg": 0.032855900000000014,
+            "min": 0,
+            "med": 0,
+            "max": 1.6415
+        },
+        "http_req_waiting": {
+            "max": 15.644,
+            "p(90)": 3.9127,
+            "p(95)": 4.927334999999998,
+            "avg": 2.0648980000000017,
+            "min": 0,
+            "med": 1.6093000000000002
+        },
+        "vus": {
+            "value": 10,
+            "min": 10,
+            "max": 10
+        }
+    },
+    "root_group": {
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "status is 200": {
+                    "name": "status is 200",
+                    "path": "::status is 200",
+                    "id": "6210a8cd14cd70477eba5c5e4cb3fb5f",
+                    "passes": 1000,
+                    "fails": 0
+                },
+                "file is 10kb.html": {
+                    "name": "file is 10kb.html",
+                    "path": "::file is 10kb.html",
+                    "id": "b0a9282c58e938632d2117e8a1112466",
+                    "passes": 200,
+                    "fails": 0
+                },
+                "file is 100kb.html": {
+                    "name": "file is 100kb.html",
+                    "path": "::file is 100kb.html",
+                    "id": "0fd419c472852aa806b90367931d2573",
+                    "passes": 200,
+                    "fails": 0
+                },
+                "file is 1mb.html": {
+                    "fails": 0,
+                    "name": "file is 1mb.html",
+                    "path": "::file is 1mb.html",
+                    "id": "e337e54e7471952ea269541feb6c9cf8",
+                    "passes": 200
+                },
+                "file is 5mb.html": {
+                    "name": "file is 5mb.html",
+                    "path": "::file is 5mb.html",
+                    "id": "b14a2dab2b1d97394d857fbcd06f0845",
+                    "passes": 200,
+                    "fails": 0
+                },
+                "file is 10mb.html": {
+                    "name": "file is 10mb.html",
+                    "path": "::file is 10mb.html",
+                    "id": "482a4a3f768697e0fcb0c81fcb6630f2",
+                    "passes": 200,
+                    "fails": 0
+                }
+            },
+        "name": "",
+        "path": ""
+    }
+}
