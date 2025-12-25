@@ -1,0 +1,79 @@
+services:
+  # Peer 1: Alice backend on port 5003 (internal)
+  # To customize name: docker-compose run -e PEER_NAME_OVERRIDE="YourName" peer-alice
+  peer-alice:
+    build: ./backend
+    container_name: peer-alice
+    ports:
+      - "5003:5003"
+    environment:
+      - PEER_PORT=5003
+      # - PEER_NAME_OVERRIDE=YourName  # Uncomment and change to customize
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/keys:/app/keys
+    restart: always
+
+  # Peer 2: Bob backend on port 5004 (internal)
+  peer-bob:
+    build: ./backend
+    container_name: peer-bob
+    ports:
+      - "5004:5004"
+    environment:
+      - PEER_PORT=5004
+      # - PEER_NAME_OVERRIDE=YourName  # Uncomment and change to customize
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/keys:/app/keys
+    restart: always
+
+  # Peer 3: Charlie backend on port 5005 (internal)
+  peer-charlie:
+    build: ./backend
+    container_name: peer-charlie
+    ports:
+      - "5005:5005"
+    environment:
+      - PEER_PORT=5005
+      # - PEER_NAME_OVERRIDE=YourName  # Uncomment and change to customize
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/keys:/app/keys
+    restart: always
+
+  # Frontend for Peer 1 (Alice) - port 5000 (public)
+  frontend-alice:
+    build: ./frontend
+    container_name: frontend-alice
+    ports:
+      - "5000:5173"
+    environment:
+      - VITE_API_BASE=http://peer-alice:5003
+    depends_on:
+      - peer-alice
+    restart: always
+
+  # Frontend for Peer 2 (Bob) - port 5001
+  frontend-bob:
+    build: ./frontend
+    container_name: frontend-bob
+    ports:
+      - "5001:5173"
+    environment:
+      - VITE_API_BASE=http://peer-bob:5004
+    depends_on:
+      - peer-bob
+    restart: always
+
+  # Frontend for Peer 3 (Charlie) - port 5002
+  frontend-charlie:
+    build: ./frontend
+    container_name: frontend-charlie
+    ports:
+      - "5002:5173"
+    environment:
+      - VITE_API_BASE=http://peer-charlie:5005
+    depends_on:
+      - peer-charlie
+    restart: always
